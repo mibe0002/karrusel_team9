@@ -1,6 +1,8 @@
 ---
 import "../styles/style.css";
-// import Header from "../component/Header.astro";
+import "../components/Header.astro";
+import "../components/Footer.astro";
+import "../components/Backbutton.astro";
 ---
 
 <html lang="en">
@@ -9,11 +11,17 @@ import "../styles/style.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-        <meta name="robots" content="noindex,nofollow">
-
-		<title>Astro</title>
+        <meta name="robots" content="noindex, nofollow">
+        <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="../styles/style.css">
+		<title>Home</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+        <Header />
+        <Backbutton />
+		<h1>Forside</h1>
+        <main>
+            <slot />
+        </main>
+        <Footer />
 	</body>
 </html>
