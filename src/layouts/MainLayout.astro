@@ -1,0 +1,31 @@
+---
+// importerer styles i stedet for at linke til style - stylesheet
+import "../styles/style.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Backbutton from "../components/Backbutton.astro";
+
+const{title} = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        <meta name="robots" content="noindex, nofollow">
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body>
+        <Header />
+        <Backbutton />
+		<h1>Test test virker css? - skriv lige hvis I kan se at css virker (baggrundsfarve osv)</h1>
+        <main>
+            <slot />
+        </main>
+        <Footer />
+	</body>
+</html>
