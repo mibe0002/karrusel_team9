@@ -10,10 +10,10 @@ img {
   display: block;
 }
 
-/* Generelle styles */
+/* Generelle styles - Variabler */
 :root {
   /* aubergine */
-  --background-color: #3d1a20;
+  --aubergineD: #3d1a20;
   --aubergine: #63313a;
 
   /* red */
@@ -37,15 +37,69 @@ img {
   --cyanL: #83c9b1;
 
   /* font */
-  /* .pridi-regular {
-  font-family: "Pridi", serif;
-  font-weight: 400;
-  font-style: normal;
-} */
-  --font-family: "Pridi", serif;
+  --primary-font: "carnivalee_freakshowregular";
+  /* .pridi-regular: font-family: "Pridi", serif;*/
+  --secondary-font: "Pridi", serif;
+
+  /* font-sizes */
+  /* DESKTOP */
+  --h1-textD1: 1.9rem;
+  --h1-textD2: 2.2rem;
+  --h1-textD3: 2.6rem;
+
+  --h2-textD1: 1.6rem;
+  --h2-textD2: 1.9rem;
+  --h2-textD3: 2.3rem;
+
+  /* buttons samme size her, bare med uppercase - det samme med links = underline*/
+  --body-textD1: 1rem;
+  --body-textD2: 1.1rem;
+  --body-textD3: 1.3rem;
+
+  /* MOBILE */
+  --h1-textM1: 1.1rem;
+  --h1-textM2: 1.3rem;
+
+  /* bold/italic eller lign. så det ikke ligner body text */
+  --h2-textM1: 1rem;
+  --h2-textM2: 1.1rem;
+
+  /* buttons samme size her, bare med uppercase - det samme med links = underline*/
+  --body-textM1: 0.9rem;
+  --body-textM2: 1rem;
 }
 
+/* fontface */
+@font-face {
+  font-family: "carnivalee_freakshowregular";
+  src: url("/fonts/webfontkit-20240314-101036/carnivaleefreakshow-dlrm-webfont.woff2") format("woff2"), url("/fonts/webfontkit-20240314-101036/carnivaleefreakshow-dlrm-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* baggrund */
+body {
+  background-color: var(--aubergineD);
+}
+
+/* text */
 h1 {
-  font-family: "Pridi", serif;
-  color: #be4937;
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: var(--h1-textD3);
+  color: var(--beige);
+}
+
+h2 {
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-family: var(--h2-textD3);
+  color: var(--beige);
+}
+
+p {
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  font-size: var(--body-textD3);
+  color: var(--beige);
 }
