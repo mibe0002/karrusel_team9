@@ -3,7 +3,6 @@ import "../styles/index.css"
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-
 <MainLayout title="Lineups">
     <div id="screen">
         <div id="index_background"></div>
@@ -14,9 +13,9 @@ import MainLayout from "../layouts/MainLayout.astro";
             <div id="timer_container">
                 <div id="timer_sprite"></div>
             </div>
-            <div id="ticket_container">
+            <a href="../pages/tickets.astro"><div id="ticket_container">
                 <div id="ticket_sprite"></div>
-            </div>
+            </div></a>
             <div id="pointer_container">
                 <div id="pointer_sprite"></div>
             </div>
@@ -39,6 +38,19 @@ import MainLayout from "../layouts/MainLayout.astro";
         </div>
         <div id="lineup_container">
              <div id="lineup_sprite"></div>
+        </div>
+    </div>
+    <div id="about">
+        <div id="about_background">
+        </div>
+        <div id="about_elements">
+            <div id="about_text">
+                <h2>ABOUT</h2>
+                <p>Karrusel is a circus themed rave presenting some of the world's leading elec&shy;tronic artists. The festival is open air and takes place on secluded green spot at the aban&shy;doned shipyard of Refshaleøen in central Copenhagen.</p>
+            </div>
+            <a href="../pages/faq.astro"><div id="iconbutton_container">
+                <div id="iconbutton_sprite"></div>
+            </div></a>
         </div>
     </div>
 </MainLayout>
