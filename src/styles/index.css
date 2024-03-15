@@ -134,7 +134,7 @@
 }
 
 #about_text p {
-  padding: 2.8rem 3rem;
+  padding: 2.8rem 10%;
   color: var(--aubergineD);
   text-align: justify;
   font-size: 4.5vw;
@@ -153,7 +153,39 @@
   height: 100%;
   background-size: cover;
   background-image: url(../../img/index_icon_button.svg);
-  /* filter: drop-shadow(0px 25px 25px rgb(0 0 0 / 0.5)); */
+}
+
+/* ----------------------------gallery stuffs---------------------------- */
+
+#gal_screen {
+  width: 100%;
+  aspect-ratio: 1170/500;
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+#gallery_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+}
+
+#galtitle_container {
+  width: 100%;
+  aspect-ratio: 390/53;
+  position: absolute;
+  top: 37%;
+}
+
+#galtitle_sprite {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(../../img/index_gallery_title.svg);
 }
 
 @media (min-width: 800px) {
@@ -233,5 +265,50 @@
 
   #lineup_sprite {
     background-image: url(../../img/index_lineup2.svg);
+  }
+
+  /* ----------------------------about stuffs---------------------------- */
+
+  #about {
+    aspect-ratio: 1440/452;
+  }
+
+  #about_background {
+    background-image: url(../../img/about2.svg);
+  }
+
+  #about_text h2 {
+    padding-top: 2.8rem;
+    font-size: 4vw;
+  }
+
+  #about_text p {
+    padding: 2.8rem 20%;
+    font-size: 1.8vw;
+  }
+
+  #iconbutton_container {
+    width: 6%;
+    top: 76%;
+    left: 47%;
+  }
+
+  /* ----------------------------gallery stuffs---------------------------- */
+  #gal_screen {
+    aspect-ratio: 1440/200;
+  }
+
+  #galtitle_container {
+    width: 100%;
+    aspect-ratio: 1439/88;
+    position: absolute;
+    top: 30%;
+  }
+
+  #galtitle_sprite {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(../../img/index_gallery_title2.svg);
   }
 }
