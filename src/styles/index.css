@@ -1,6 +1,6 @@
 #screen {
   width: 100%;
-  aspect-ratio: 1920/1080;
+  aspect-ratio: 1170/2532;
   position: relative;
   overflow: hidden;
   container-type: inline-size;
@@ -13,5 +13,25 @@
   top: 0;
   left: 0;
   background-size: cover;
-  background-image: url(../../public/img/index_top.svg);
+  background-image: url(../../img/index_top_p.svg);
+}
+
+@media (min-width: 800px) {
+  #screen {
+    width: 100%;
+    aspect-ratio: 1920/1080;
+    position: relative;
+    overflow: hidden;
+    container-type: inline-size;
+  }
+
+  #index_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-image: url(../../img/index_top.svg);
+  }
 }
