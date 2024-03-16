@@ -1,0 +1,42 @@
+.tickets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+main {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background-color: #63313a;
+  border-radius: 40px;
+}
+
+.ticket {
+  width: 1000px;
+  height: 1000px;
+}
+
+#ticket1 {
+  margin-right: -100px;
+}
+
+#ticket2 {
+  margin-left: -100px;
+}
+
+.ticket:hover {
+  transform: scale(1.1);
+}
+
+#ticket1:hover {
+  content: url("../../tickets/ticket1_hover.svg");
+}
+
+#ticket2:hover {
+  content: url("../../tickets/ticket2_hover.svg");
+}
