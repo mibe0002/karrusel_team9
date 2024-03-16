@@ -3,22 +3,27 @@ import "../styles/style.css";
 ---
 
 <nav>
-    <a href="../pages/faq.astro">FAQ</a>
-    <a href="../pages/galleri.astro">Gallery</a>
-    <a href="../pages/index.astro">Home</a>
-    <a href="../pages/lineup.astro">Line-up</a>
-    <a href="../pages/tickets.astro">Tickets</a>
+    <a href="/faq">FAQ</a>
+    <a href="/galleri">Gallery</a>
+    <a href="/"><img id="logovector" src="../img/header/logovector.svg" alt="Karrusels logo vector"></a>
+    <a href="/lineup">Line - up</a>
+    <div class="ticket">
+    <img id="ticketbackground" src="../img/header/ticketbackground.svg" alt="">
+    <a href="/tickets">Tickets</a>
+    </div>
 </nav>
 
 <style>
 nav {
 background-color: var(--aubergine);
 box-shadow: rgb(39, 19, 23, 15);
-padding: 2rem 1.8rem;
+padding: 1rem 0.4rem;
 display: flex;
+align-items: center;
 justify-content: space-evenly;
 }
-a {
+
+nav a {
 color:var(--beige);
 font-size: var(--h2-textD1);
 font-family: var(--primary-font);
@@ -26,6 +31,31 @@ text-transform: uppercase;
 text-decoration: none;
 }
 
+nav a:hover {
+color: var(--guld);
+}
 
+#logovector {
+    width: 100%;
+    height: auto;
+}
+
+/* ticket placering med baggrund */
+.ticket {
+position: relative;
+text-align: center;
+}
+
+.ticket a {
+    position: relative;
+}
+
+#ticketbackground {
+position: absolute;
+top: 0px;
+left: 50%;
+transform:translate(-50%, -50%);
+width: 120%;
+height: auto;
+}
 </style>
-
