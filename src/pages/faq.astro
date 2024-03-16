@@ -7,11 +7,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout title="FAQ">
        <h1>Her skal du layoute FAQ</h1>
 </MainLayout>
----
-import "../styles/style.css";
-import MainLayout from "../layouts/MainLayout.astro";
-import Card from "../components/Card.astro"
----
+
 
 
 		<MainLayout>
@@ -20,7 +16,11 @@ import Card from "../components/Card.astro"
     
     <section class="questions">
     
-    <p>What is Karrusel?</p>
+    <button>
+        <p class="plus">+</p>
+        <p class="question">What is Karrusel?</p>
+    </button>
+  
     
     </section>
     
@@ -33,4 +33,8 @@ import Card from "../components/Card.astro"
     .questions{
         background-color: #6EBBA4;
     }
-</s
+
+    p .question{
+        background-color: #FFE9C3;
+    }
+</style>
