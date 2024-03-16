@@ -1,5 +1,31 @@
 ---
-
+import "../styles/style.css";
 ---
 
-<p>HEADER HeADER TEST</p>
+<nav>
+    <a href="../pages/faq.astro">FAQ</a>
+    <a href="../pages/galleri.astro">Gallery</a>
+    <a href="../pages/index.astro">Home</a>
+    <a href="../pages/lineup.astro">Line-up</a>
+    <a href="../pages/tickets.astro">Tickets</a>
+</nav>
+
+<style>
+nav {
+background-color: var(--aubergine);
+box-shadow: rgb(39, 19, 23, 15);
+padding: 2rem 1.8rem;
+display: flex;
+justify-content: space-evenly;
+}
+a {
+color:var(--beige);
+font-size: var(--h2-textD1);
+font-family: var(--primary-font);
+text-transform: uppercase;
+text-decoration: none;
+}
+
+
+</style>
+

@@ -3,7 +3,6 @@
 import "../styles/style.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Backbutton from "../components/Backbutton.astro";
 
 const{title} = Astro.props;
 ---
@@ -21,8 +20,6 @@ const{title} = Astro.props;
 	</head>
 	<body>
         <Header />
-        <Backbutton />
-		<h1>Test test virker css? - skriv lige hvis I kan se at css virker (baggrundsfarve osv)</h1>
         <main>
             <slot />
         </main>

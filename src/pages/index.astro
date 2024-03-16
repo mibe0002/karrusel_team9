@@ -1,18 +1,44 @@
 ---
-
+import "../styles/index.css"
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="../styles/style.css">
-		<link rel="stylesheet" href="../styles/index.css">
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<MainLayout title="Lineups">
+    <div id="screen">
+        <div id="index_background"></div>
+        <div id="index_elements">
+            <div id="invite_container">
+                <div id="invite_sprite"></div>
+            </div>
+            <div id="timer_container">
+                <div id="timer_sprite"></div>
+            </div>
+            <div id="ticket_container">
+                <div id="ticket_sprite"></div>
+            </div>
+            <div id="pointer_container">
+                <div id="pointer_sprite"></div>
+            </div>
+        </div>
+	</div>
+    <div id="sunray">
+        <div id="sunray_background">
+             <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" overflow="hidden" >
+             <g>
+             <path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(0, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(9, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(18, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(27, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(36, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(45, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(54, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(63, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(72, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(81, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(90, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(99, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(108, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(117, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(126, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(135, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(144, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(153, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(162, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(171, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(180, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(189, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(198, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(207, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(216, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(225, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(234, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(243, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(252, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(261, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(270, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(279, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(288, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(297, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(306, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(315, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(324, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(333, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#da604e" transform-origin="50 50" transform="rotate(342, 0, 0)" /><path d="M 50 50 L 250 50 L 247.53766811902756 81.28689300804618" fill="#ffe9c3" transform-origin="50 50" transform="rotate(351, 0, 0)" /><animateTransform
+	        attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="50s"
+            repeatCount="indefinite" />    
+            </g>
+            </svg>
+        </div>
+        <div id="lineup_container">
+             <div id="lineup_sprite"></div>
+        </div>
+    </div>
+</MainLayout>
