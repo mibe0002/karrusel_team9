@@ -2,14 +2,110 @@
 import "../styles/style.css";
 ---
 
-<!-- <nav>
-    <a href="/faq">FAQ</a>
-    <a href="/galleri">Gallery</a>
-    <a href="/"><img id="logovector" src="../img/header/logovector.svg" alt="Karrusels logo vector"></a>
-    <a href="/lineup">Line - up</a>
-    <div class="ticket">
-    <img id="ticketbackground" src="../img/header/ticketbackground.svg" alt="">
-    <a href="/tickets">Tickets</a>
+<footer class="footer">
+    <div class="emailformat">
+         <form action="#" method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit">Submit</button>
+        </form>
     </div>
-</nav> -->
+    <div class="footernav">
+        <a href="/">Home</a>
+        <a href="/faq">Contact</a>
+        <a href="/faq">About us</a>
+    </div>
+    <div class="so_me_icons">
+        <img src="../img/footer/instagramicon.svg" alt="instagram's icon">
+        <img src="../img/footer/facebookicon.svg" alt="facebook's icon">
+        <img src="../img/footer/yticon.svg" alt="youtube's icon">
+        <img src="../img/footer/spotifyicon.svg" alt="spotify's icon">
+    </div>
+</footer>
 
+<style>
+    .footer {
+    background-color:var(--aubergine);
+    padding: 2.5rem 0.4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footernav a {
+    color: var(--beige);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: var(--body-textD3);
+    transition: color 0.3s ease-in-out;
+}
+
+.footer p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.footer .button {
+    background-color: var(--beige);
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.footer .button:hover {
+    background-color: #a64c38;
+}
+
+.circus {
+    text-align: center;
+}
+
+.electronic-music {
+    text-align: center;
+}
+
+.emailformat {
+    text-align: center;
+}
+
+.emailformat input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.emailformat button {
+    padding: 10px 20px;
+    background-color: #a64c38;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footernav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footernav a:hover {
+    color: #a64c38;
+}
+
+.so_me_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.so_me_icons img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+
+</style>

@@ -10,7 +10,7 @@ import "../styles/style.css";
     <ul class="menu">
         <li><a href="/faq">FAQ</a></li> 
         <li> <a href="/galleri">Gallery</a></li>
-        <li><a href="/"><img id="logovector" src="../img/header/logovector.svg" alt="Karrusel's logo vector">Home</a></li> 
+        <li><a href="/"><img id="logovector" src="../img/header/logovector.svg" alt="Karrusel's logo vector"><span class="mobile_only">Home</span></a></li>
         <li><a href="/lineup">Line - up</a></li>
         <li><div id="ticket">
         <img id="ticketbackground" src="../img/header/ticketbackground.svg" alt="svg background for ticket">
@@ -36,6 +36,10 @@ header {
   display: none;
 }
 
+.mobile_only {
+  display: none;
+}
+
 .menu {
     display: flex;
     align-items: center;
@@ -54,6 +58,7 @@ text-decoration: none;
 
 li a:hover {
 color: var(--guld90);
+transition: color 0.3s ease-in-out;
 }
 
 #logovector {
@@ -63,6 +68,7 @@ color: var(--guld90);
 
 #logovector:hover {
 filter: drop-shadow(0 0 0.70rem var(--guld));
+transition: color 0.3s ease-in-out;
 }
 
 /* ticket placering med baggrund */
@@ -133,6 +139,10 @@ height: auto;
       display: none;
     } 
 
+    .mobile_only {
+  display: inline-block;
+}
+
     #ticketbackground {
       display: none;
     }
@@ -163,7 +173,6 @@ height: auto;
         width: 20px;
     }
 }
-
 @keyframes lineBeat2 {
     0%, 100% {
         width: 50px;
@@ -172,7 +181,6 @@ height: auto;
         width: 60px;
     }
 }
-
 @keyframes lineBeat3 {
     0%, 100% {
         width: 30px;
@@ -181,22 +189,18 @@ height: auto;
         width: 40px;
     }
 }
-
 .burger.active .line:nth-child(1) {
     opacity: 1;
     animation: lineBeat1 0.6s ease-in-out infinite alternate;
 }
-
 .burger.active .line:nth-child(2) {
     opacity: 1;
     animation: lineBeat2 0.6s ease-in-out infinite alternate; 
 }
-
 .burger.active .line:nth-child(3) {
     opacity: 1;
     animation: lineBeat3 0.6s ease-in-out infinite alternate;
 }
-
   nav.active .menu {
     display: block;
     background-color: var(--aubergine);
@@ -209,12 +213,10 @@ height: auto;
     text-align: right;
     padding-right: 36px;
   }
-
   nav.active .menu li {
     margin: 10px 20px;
     padding: 5px;
   }
-
   nav.active .menu a {
     font-size: var(--h1-textM2);
   }
