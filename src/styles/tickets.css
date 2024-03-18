@@ -17,16 +17,16 @@ main {
 }
 
 .ticket {
-  width: 1000px;
-  height: 1000px;
+  width: 800px;
+  height: 800px;
 }
 
 #ticket1 {
-  margin-right: -100px;
+  margin-right: -130px;
 }
 
 #ticket2 {
-  margin-left: -100px;
+  margin-left: -130px;
 }
 
 .ticket:hover {
