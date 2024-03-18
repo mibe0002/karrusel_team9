@@ -3,32 +3,41 @@
   justify-content: space-between;
   margin-top: 50px;
 }
+
 .button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+  padding: 15px 35px;
+  background-color: #f0b921;
+  color: #63313a;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-.button:hover {
-  background-color: #45a049;
-}
-.gallery {
-  display: none;
-}
-.gallery.active {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  margin-right: 70px;
+  margin-left: 70px;
 }
 
-.gallery.active:not(:first-child) {
-  margin-top: 0;
+#btn2023,
+#btn2022,
+#btn2021,
+#btn2019 {
+  font-size: 1.5rem;
+}
+
+.button:hover {
+  background-color: #6ebba4;
+}
+
+.gallery {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery.active {
+  display: flex;
 }
 
 .gallery img {
   max-width: 100px;
-  margin-right: 10px;
+  margin: 10px;
 }
