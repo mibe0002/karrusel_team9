@@ -1,20 +1,41 @@
 ---
 import "../styles/style.css";
+const {h1} = Astro.props
 ---
 
-<!-- <div>
-<img id="titlebanner" src="../../public/img/header/titlebanner.svg" alt="title banner graphic">
-</div> -->
-
+<div id="titlebanner">
+    <img id="banner" src="../img/header/titlebanner.svg" alt="title banner graphic">
+    <h1 id="title">{h1}<h1/>
+    <svg id="line" xmlns="http://www.w3.org/2000/svg" width="100%" height="2">
+   <line x1="0" y1="1" x2="100%" y2="1" stroke-width="2"/></svg>
+   <!-- svg vha. w3schools -->
+</div>
 
 <style>
-    #titlebanner {
-    background: none;
-    border: none;
-    padding: 40px 22px;
-    cursor: pointer;
-    width: 10%;
-    min-width: 147px;
-    height: auto;
+  #titlebanner {
+position: relative;
+text-align: center;
+}
+
+#title {
+    position: relative;
+    color: aqua;
+}
+
+#line {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    stroke: var(--line-color);
+    z-index: -1;
+}
+
+#banner {
+position: absolute;
+top: 50%;
+left: 50%;
+transform:translate(-50%, -50%);
+width: 60%;
+height: auto;
 }
 </style>
