@@ -1,36 +1,76 @@
 ---
 import "../styles/faq.css"
 import MainLayout from "../layouts/MainLayout.astro";
+import Backbutton from "../components/Backbutton.astro";
 ---
 
 
 <MainLayout title="FAQ">
-    <main>
 
-        <section class="top_sec">
+<section class="top_sec">
+<Backbutton />
 
 <div id="faq_img_con">
     <div id="faq_img"></div>
 </div>
-        </section>
+ </section>
 
 
-        <div id="pointer_container">
+       <!--<div id="pointer_container">
             <div id="pointer_sprite"></div>
-        </div>
-
+        </div> --> 
+<main>
 
 <section class="questions">
+
+
+  <!--
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn"> <span>+ </span>What is Karrusel?</button>
+        <div id="myDropdown" class="dropdown-content">
+            <p>3 days of house, disco and techno in the woods from 22–24 August 2024. Karrusel takes place at a
+                secluded green spot on Refshaleøen in central Copenhagen. 2024 marks the 5th edition of Karrusel.
+                Past editions include performances by Acid Pauli, Amelie Lens, Dixon, FJAAK, Folamour, Hunee, Job
+                Jobse, Kölsch, Mall Grab, Nastia, Partiboi69, Peggy Gou, Richie Hawtin, Skin On Skin, The Blessed
+                Madonna, Victor Ruiz, VTSS and more.</p>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn"> <span>+ </span>What is Karrusel?</button>
+        <div id="myDropdown" class="dropdown-content">
+            <p>3 days of house, disco and techno in the woods from 22–24 August 2024. Karrusel takes place at a
+                secluded green spot on Refshaleøen in central Copenhagen. 2024 marks the 5th edition of Karrusel.
+                Past editions include performances by Acid Pauli, Amelie Lens, Dixon, FJAAK, Folamour, Hunee, Job
+                Jobse, Kölsch, Mall Grab, Nastia, Partiboi69, Peggy Gou, Richie Hawtin, Skin On Skin, The Blessed
+                Madonna, Victor Ruiz, VTSS and more.</p>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn"> <span>+ </span>What is Karrusel?</button>
+        <div id="myDropdown" class="dropdown-content">
+            <p>3 days of house, disco and techno in the woods from 22–24 August 2024. Karrusel takes place at a
+                secluded green spot on Refshaleøen in central Copenhagen. 2024 marks the 5th edition of Karrusel.
+                Past editions include performances by Acid Pauli, Amelie Lens, Dixon, FJAAK, Folamour, Hunee, Job
+                Jobse, Kölsch, Mall Grab, Nastia, Partiboi69, Peggy Gou, Richie Hawtin, Skin On Skin, The Blessed
+                Madonna, Victor Ruiz, VTSS and more.</p>
+        </div>
+    </div>
+ -->  
+
 <p class="question"> <a class="plus" href="#">+</a>What is Karrusel?</p>
 <p class="question"> <a class="plus" href="#">+</a>Contact us</p>
 <p class="question"> <a class="plus" href="#">+</a>Timetable and map over Karrusel Festival</p>
 <p class="question"> <a class="plus" href="#">+</a>Is it possible to buy merchandise?</p>
 <p class="question"> <a class="plus" href="#">+</a>What happens in relation to bad weather?</p>
-<p class="question"> <a class="plus" href="#">+</a>How can I apply to perform?</p>
+<p class="question"> <a class="plus" href="#">+</a>How can I apply to perform?</p> 
 </section>
 
         
-       </main>
+ </main>
+
+ <section class="bot_sec">
+   
+</section>
 
 </MainLayout>
 
@@ -44,27 +84,37 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     .top_sec{
         background-color: #3D1A20;
-        height: 10rem;
+        height: 15rem;
+    }
+
+    .bot_sec{
+        background-color: #3D1A20;
+        height: 8rem;
     }
 
     #faq_img_con{
-        width: 10%;
-    aspect-ratio: 198/92;
-    position: absolute;
+        width: 100%;
+  aspect-ratio: 390/53;
+  position: absolute;
+  top: 37%;
    
     }
 
     #faq_img{
-        background-image: url(../../faq_banner.svg);
+        background-image: url(../../img/faq_banner.svg);
         width: 100%;
         height: 100%;
+        background-size: cover;
     }
+
     .questions{
         background-color: #6EBBA4;
         display: flex;
         flex-direction: column;
         
     }
+
+   
 
      .question{
         background-color: #FFE9C3;
@@ -80,22 +130,89 @@ import MainLayout from "../layouts/MainLayout.astro";
         margin-right: 1rem;
         font-size: 40px;
     }
+    
 
-    #pointer_container {
-    width: 10%;
-    aspect-ratio: 198/92;
-    position: absolute;
-    top: 30%;
-    left: 2%;
-  }
+  
 
-  #pointer_sprite {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-image: url(../../img/hand_left.svg);
-    filter: drop-shadow(0px 25px 25px rgb(0 0 0 / 0.5));
-  }
 
+
+
+  /* Dropdown Button */
+.dropbtn {
+  background-color: #ffe9c3;
+  color: #3d1a20;
+  padding: 15px;
+  padding-right: 7rem;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  margin: 1rem;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffe9c3;
+  min-width: 160px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #3d1a20;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+span {
+  color: #f0b921;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-size: 40px;
+}
+ 
 
 </style>
+
+
+<script>
+
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+</script>
