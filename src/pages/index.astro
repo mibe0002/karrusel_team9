@@ -3,7 +3,6 @@ import "../styles/index.css"
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-
 <MainLayout title="Lineups">
     <div id="screen">
         <div id="index_background"></div>
@@ -14,10 +13,10 @@ import MainLayout from "../layouts/MainLayout.astro";
             <div id="timer_container">
                 <div id="timer_sprite"></div>
             </div>
-            <div id="ticket_container">
+            <a href="../pages/tickets.astro"><div id="ticket_container">
                 <div id="ticket_sprite"></div>
-            </div>
-            <div id="pointer_container">
+            </div></a>
+            <div id="pointer_container" class="move">
                 <div id="pointer_sprite"></div>
             </div>
         </div>
@@ -39,6 +38,41 @@ import MainLayout from "../layouts/MainLayout.astro";
         </div>
         <div id="lineup_container">
              <div id="lineup_sprite"></div>
+        </div>
+    </div>
+    <div id="about">
+        <div id="about_background">
+        </div>
+        <div id="about_elements">
+            <div id="about_text">
+                <h2>ABOUT</h2>
+                <p>Karrusel is a circus themed rave presenting some of the world's leading elec&shy;tronic artists. The festival is open air and takes place on secluded green spot at the aban&shy;doned shipyard of Refshaleøen in central Copenhagen.</p>
+            </div>
+            <a href="../pages/faq.astro"><div id="iconbutton_container">
+                <div id="iconbutton_sprite"></div>
+            </div></a>
+        </div>
+    </div>
+    <div id="gal_screen">
+        <div id="gallery_background">
+            <div id="galtitle_container">
+                <div id="galtitle_sprite"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box_1"><img src="../../public/img/photo_1.jpg" alt="1"></div>
+        <div class="box_2"><img src="../../public/img/photo_2.jpg" alt="2"></div>
+        <div class="box_3"><img src="../../public/img/photo_5.jpg" alt="3"></div>
+        <div class="box_4"><img src="../../public/img/photo_4.jpg" alt="4"></div>
+        <div class="box_5"><img src="../../public/img/photo_3.jpg" alt="5"></div>
+        <div class="box_6"><img src="../../public/img/photo_6.jpg" alt="6"></div>
+    </div>
+     <div id="seemore_screen">
+        <div id="seemore_background">
+            <a href="../pages/galleri.astro"><div id="seemore_container">
+                <div id="seemore_sprite"></div></a>
+            </div>
         </div>
     </div>
 </MainLayout>
