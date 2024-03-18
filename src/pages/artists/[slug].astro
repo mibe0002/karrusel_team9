@@ -1,0 +1,28 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+    const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_karrusel_supabase", {
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6ZmpibGV4aHdvaWpnYmdtaXh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAzNDIxMTQsImV4cCI6MjAyNTkxODExNH0.O7nP4UolRZVDGhGQ3-0RoYhP0SEzLOyHHhp125SwNvw"
+    },
+}).then((response) => response.json());
+
+    return data.map((show) => {
+        return {
+            params: { slug: show.slug },
+            props: { myData: show },
+        };
+    });
+}
+
+const {myData} = Astro.props
+console.log(myData);
+---
+
+<MainLayout title="{myData.artistname}">
+    <!-- dot notation virkede ikke = {myData.artistname} i stedet løst med bracket notation -->
+<h2>{myData['artistname']}</h2>
+<p>{myData['lokation']}</p>
+</MainLayout>

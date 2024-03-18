@@ -2,14 +2,31 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro"
 import Backbutton from "../components/Backbutton.astro";
+const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_karrusel_supabase",
+{
+    method:"GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6ZmpibGV4aHdvaWpnYmdtaXh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAzNDIxMTQsImV4cCI6MjAyNTkxODExNH0.O7nP4UolRZVDGhGQ3-0RoYhP0SEzLOyHHhp125SwNvw"
+    }
+}).then(res=>res.json());
+
+// console.log(data);
 ---
 
 <MainLayout title="Line-ups">
     <Backbutton />
-    <Card />
-        <h1>Activities</h1>
+      <h1>ARTISTS</h1>
+<section class="artists">
+    {data.map(show=>{
+    return <Card data={show}/>;
+    })
+    }
 
-        <div class="carousel_flip_container">
+</section>
+    
+      
+
+        <!-- <div class="carousel_flip_container">
             <div class="carousel_inner">
                 <div class="card active">
                     <div class="card_front">
@@ -126,5 +143,5 @@ import Backbutton from "../components/Backbutton.astro";
             <button class="btn prev">❮</button>
             <button class="btn next">❯</button>
             <div class="dots"></div>
-        </div>   
+        </div>    -->
 </MainLayout>
