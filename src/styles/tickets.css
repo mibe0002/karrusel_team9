@@ -60,18 +60,14 @@ main {
 }
 
 @media only screen and (max-width: 767px) {
-  .left,
-  .right {
-    width: 100%;
-    text-align: center;
-  }
-
-  .right {
-    display: none;
+  .ticket-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .ticket {
-    max-width: 300px; /* Adjust the maximum width as needed */
-    height: auto;
+    max-width: 300px;
+    margin-bottom: 20px;
   }
 }
