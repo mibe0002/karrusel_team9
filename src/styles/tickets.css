@@ -13,8 +13,17 @@ header {
 }
 
 main {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 0%;
+}
+
+#back_button {
+  background: none;
+  border: none;
+  padding: 0px 22px;
+  cursor: pointer;
+  width: 9%;
+  min-width: 147px;
+  height: auto;
 }
 
 .ticket {
