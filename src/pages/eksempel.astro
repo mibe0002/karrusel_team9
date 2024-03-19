@@ -1,0 +1,226 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Acid Pauli">
+    <div class="grid_1-1-1">
+        <div class="photo">
+            <img src="/img/acid-pauli.jpg" alt="Acid Pauli">
+            <div class="navn">
+                <h2>Acid Pauli</h2>
+                <a href="/#">FOLLOW THE ARTIST</a>
+            </div>
+            <div id="icon_screen">
+                <div id="icon_background">
+                    <div id="icon_container">
+                        <div id="icon_sprite"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tekst order">
+            <div class="dato">
+                <p>Saturday 06/24 | 22.05-23.30</p>
+            </div>
+            <div class="location">
+                <h3>Location</h3>
+                <a href="/#">Manegen</a>
+            </div>
+            <div class="description">
+                <h3>Description</h3>
+                <p>Martin Gretschmann, aka Acid Pauli, is a Berlin-based DJ, who has been exploring the fields of music for the past 20 years. What started out as a computer-based live act has now morphed into a dancefloor-focused hybrid live/DJ performance, yet reserves the freedom to experiment. 
+    With two albums under his belt, Acid Pauli never ceases to amaze with his ability to create amazing sounds for his audience. His music not only incorporates techno and house, but a wide variety of music across genres beyond dance music.</p>
+            </div>
+            <div class="genre">
+                <h3>Genre</h3>
+                <p>DJ, Techno, House, Dance Music</p>
+            </div>
+        </div>
+        <div class="list">
+            <a href="/#" class="seeall">See all</a>
+            <div class="artists">
+                <div class="artist">
+                <img src="/img/ame-img.jpg" alt="Ame" class="art_img">
+                <a href="/#">Âme</a>
+                </div>
+                <div class="artist">
+                <img src="/img/anna-logic.jpg" alt="Anna Logic" class="art_img">
+                <a href="/#">Anna Logic</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+.grid_1-1-1 {
+     font-family: var(--secondary-font);
+}
+
+.photo img{
+width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  align-self: stretch;
+}
+
+.navn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px 25px;
+}
+
+.navn a {
+    font-size: var(--h1-textM2);
+    color: var(--cyan);
+     padding-top: 12px;
+}
+
+h2 {
+    font-size: var(--h2-textD3);
+}
+
+h3 {
+    color: var(--beige);
+    font-size: var(--body-textD3)
+}
+
+.tekst {
+    margin: 15px 25px;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.location a, .seeall, .artist a{
+    color: var(--cyan);
+        font-size: var(--body-textD3)
+
+}
+
+.dato, .location, .description, .genre {
+    margin-bottom: 25px;
+}
+
+.seeall {
+    margin-right: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.artists {
+    display: grid;
+    gap: 50px;
+    margin: 15px 25px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.artists img {
+    border-top-right-radius: 50px;
+}
+
+.artist a{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+@media (min-width: 800px) {
+.grid_1-1-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.photo {
+    margin: 0px 50px;
+}
+
+.navn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.navn a{
+    display: flex;
+    justify-content: center;
+}
+
+#icon_screen {
+  width: 100%;
+  aspect-ratio: 1920/1080;
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+#icon_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+}
+
+#icon_container {
+  width: 75%;
+  aspect-ratio: 354/61;
+  position: absolute;
+  top: 25%;
+  left: 12%;
+}
+
+#icon_sprite {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(../../img/acid_icons.svg);
+}
+
+.order {
+    order: -1;
+  }
+
+.tekst {
+    margin: 15px 50px;
+}
+
+.seeall {
+    margin-right: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.artists {
+    display: grid;
+    gap: 50px;
+    margin: 15px 50px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: none;
+}
+
+.artists img {
+    border-top-right-radius: 50px;
+}
+
+
+.artist a{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+}
+}
+</style>
