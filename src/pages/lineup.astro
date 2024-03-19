@@ -5,11 +5,11 @@ import Backbutton from "../components/Backbutton.astro";
 import Titlebanner from "../components/Titlebanner.astro";
 const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_karrusel_supabase",
 {
-    method:"GET",
+    method: "GET",
     headers: {
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6ZmpibGV4aHdvaWpnYmdtaXh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAzNDIxMTQsImV4cCI6MjAyNTkxODExNH0.O7nP4UolRZVDGhGQ3-0RoYhP0SEzLOyHHhp125SwNvw"
-    }
-}).then(res=>res.json());
+    },
+}).then((res) => res.json());
 
 // console.log(data);
 ---
@@ -19,12 +19,15 @@ const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_ka
     <Titlebanner h1="Artists" />
 
 <section class="artists">
-    <!-- noget med mellemrummet mellem map og (show) -->
-    {data.map (show=> {
+    {data.map((show) => {
     return <Card data={show} className="card" />;
     })
     }
 </section>
+
+<div class="plakat">
+    <img src="/img/lineups23plakat.webp" alt="Poster program over performers">
+</div>
 </MainLayout>
 
 <style>
@@ -53,4 +56,11 @@ const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_ka
 .artists {
     scrollbar-color: var(--guld) transparent;
 }
+
+.plakat {
+    padding: 80px 500px;
+}
+
+/* MOBIL */
+
 </style>
