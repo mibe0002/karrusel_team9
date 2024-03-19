@@ -1,18 +1,20 @@
 ---
 import "../styles/galleri.css"
 import MainLayout from "../layouts/MainLayout.astro";
+
 ---
 
 <MainLayout title="Gallery">
 
- <div class="container">
+   <div class="container">
     <button class="button" id="btn2023">2023</button>
     <button class="button" id="btn2022">2022</button>
     <button class="button" id="btn2021">2021</button>
     <button class="button" id="btn2019">2019</button>
   </div>
 
-  <div class="gallery" id="gallery2023">
+  <div class="row">
+  <div class="column" id="gallery2023">
     <img src="../../public/gallery/2023/billede1.webp" alt="2023 Image 1">
     <img src="../../public/gallery/2023/billede2.webp" alt="2023 Image 2">
     <img src="../../public/gallery/2023/billede3.webp" alt="2023 Image 3">
@@ -33,7 +35,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     <img src="../../public/gallery/2023/billede18.webp" alt="2023 Image 18">
   </div>
 
-  <div class="gallery" id="gallery2022">
+
+  <div class="column" id="gallery2022">
     <img src="../../public/gallery/2022/billede1.webp" alt="2022 Image 1">
     <img src="../../public/gallery/2022/billede2.webp" alt="2022 Image 2">
     <img src="../../public/gallery/2022/billede3.webp" alt="2022 Image 3">
@@ -52,8 +55,9 @@ import MainLayout from "../layouts/MainLayout.astro";
     <img src="../../public/gallery/2022/billede16.webp" alt="2022 Image 16">
   </div>
 
-  <div class="gallery" id="gallery2021">
-    <img src="../../public/gallery/2021/billede1.webp" alt="2021 Image 1">
+
+  <div class="column" id="gallery2021">
+   <img src="../../public/gallery/2021/billede1.webp" alt="2021 Image 1">
     <img src="../../public/gallery/2021/billede2.webp" alt="2021 Image 2">
     <img src="../../public/gallery/2021/billede3.webp" alt="2021 Image 3">
     <img src="../../public/gallery/2021/billede4.webp" alt="2021 Image 4">
@@ -67,8 +71,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     <img src="../../public/gallery/2021/billede12.webp" alt="2021 Image 12">
   </div>
 
-  <div class="gallery" id="gallery2019">
-    <img src="../../public/gallery/2019/billede1.webp" alt="2019 Image 1">
+  <div class="column" id="gallery2019">
+   <img src="../../public/gallery/2019/billede1.webp" alt="2019 Image 1">
     <img src="../../public/gallery/2019/billede2.webp" alt="2019 Image 2">
     <img src="../../public/gallery/2019/billede3.webp" alt="2019 Image 3">
     <img src="../../public/gallery/2019/billede4.webp" alt="2019 Image 4">
@@ -82,25 +86,28 @@ import MainLayout from "../layouts/MainLayout.astro";
     <img src="../../public/gallery/2019/billede12.webp" alt="2019 Image 12">
   </div>
 
+</div>
 
+<script>
+ document.addEventListener("DOMContentLoaded", function() {
+  // Gemmer referencer til alle knapper og billeder
+  const buttons = document.querySelectorAll('.button');
+  const galleries = document.querySelectorAll('.column');
 
-   <script>
-    const buttons = document.querySelectorAll('.button');
-    const galleries = document.querySelectorAll('.gallery');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const year = button.textContent;
-        galleries.forEach(gallery => {
-          if (gallery.id === `gallery${year}`) {
-            gallery.classList.toggle('active');
-          } else {
-            gallery.classList.remove('active');
-          }
-        });
+  // Tilføjer en event listener til hver knap
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const year = this.id.substring(3); // Udtrækker året fra knappens id
+      // Skjuler alle gallerier
+      galleries.forEach(gallery => {
+        gallery.classList.remove('show'); // Fjerner klassen 'show' fra alle gallerier
       });
+      // Viser det galleri der matcher året for den klikkede knap
+      document.getElementById(`gallery${year}`).classList.add('show'); // Tilføjer klassen 'show' til det valgte galleri
     });
-  </script>
+  });
+});
 
-
+</script>
+  
 </MainLayout>
