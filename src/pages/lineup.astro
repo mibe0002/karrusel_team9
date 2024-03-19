@@ -19,10 +19,9 @@ const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_ka
     <Titlebanner h1="Artists" />
 
 <section class="artists">
-    {data.map(show=> {
-    return <Card data={show} className="card">
-        
-        </Card>
+    <!-- noget med mellemrummet mellem map og (show) -->
+    {data.map (show=> {
+    return <Card data={show} className="card" />;
     })
     }
 </section>
