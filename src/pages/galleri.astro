@@ -1,10 +1,12 @@
 ---
 import "../styles/galleri.css"
 import MainLayout from "../layouts/MainLayout.astro";
+import Titlebanner from "../components/Titlebanner.astro";
 
 ---
 
 <MainLayout title="Gallery">
+   <Titlebanner h1="Gallery" />
 
    <div class="container">
     <button class="button" id="btn2023">2023</button>
@@ -88,7 +90,33 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 </div>
 
+
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+  // Gemmer referencer til alle knapper og billeder
+  const buttons = document.querySelectorAll('.button');
+  const galleries = document.querySelectorAll('.column');
+
+  // Tilføjer en event listener til hver knap
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const year = this.id.substring(3); // Udtrækker året fra knappens id
+      // Skjuler alle gallerier
+      galleries.forEach(gallery => {
+        gallery.classList.remove('show'); // Fjerner klassen 'show' fra alle gallerier
+      });
+      // Viser det galleri der matcher året for den klikkede knap
+      document.getElementById(`gallery${year}`).classList.add('show'); // Tilføjer klassen 'show' til det valgte galleri
+    });
+  });
+
+  // Viser galleriet for 2023 når siden indlæses
+  document.getElementById('gallery2023').classList.add('show');
+});
+
+</script>
+
+<!-- <script>
  document.addEventListener("DOMContentLoaded", function() {
   // Gemmer referencer til alle knapper og billeder
   const buttons = document.querySelectorAll('.button');
@@ -108,6 +136,6 @@ import MainLayout from "../layouts/MainLayout.astro";
   });
 });
 
-</script>
+</script> -->
   
 </MainLayout>
