@@ -1,28 +1,81 @@
 ---
 const {data} = Astro.props;
-console.log(data);
+// console.log(data);
 ---
 <!-- artists/acid-pauli -->
 <a href={`artists/${data.slug}`}>
 
 <article class="container">
 <div class="card">
+    <div class="card-content">
+    <img src={data.img}alt="Billede af kunstner" loading="lazy">
     <h2>{data.artistname}</h2>
-    <!-- <img src={img} alt="Acid Pauli"> -->
     <p>{data.dato}</p>
     <p>{data.lokation}</p>
-    <p>{data.beskrivelse}</p>
     <button>Learn more</button>
+    </div>
 </div>
 </article>
 </a>
 
 <style>
 .card {
- border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--aubergine);
+ border-radius: 50%;
+ width: 300px;
+ height: 300px;
+    box-shadow: 0 4px 6px rgba(39, 19, 23, 0.1);
     padding: 20px;
-    flex: 0 0 calc(33.33% - 20px); /* Adjust width as needed */
- }
- 
+    /* flex: 0 0 calc(33.33% - 20px); Adjust width as needed */
+}
+
+.card h2 {
+    font-family: var(--secondary-font);
+    font-size: var(--h2-textD1);
+    color: var(--aubergineD);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: var(--body-textD1);
+    color: var(--aubergineD);
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Add circus theme colors and styles */
+.card {
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+}
+
+.card:hover {
+    background-color: #fd7e14; /* Orange */
+}
+
+.card h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.card p {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Add electronic music theme styles */
+.card {
+    background-color: #007bff; /* Blue */
+}
+
+.card:hover {
+    background-color: #6610f2; /* Purple */
+}
+
+.card h2, .card p {
+    color: #fff;
+}
  </style>
