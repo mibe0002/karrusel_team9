@@ -36,13 +36,22 @@ const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_ka
         padding: 10px;
         gap: 20px;
         scroll-padding: 10px;
+         /* Hides scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
     }
 
-    
+    .artists::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
     .artists .card {
         flex: 0 0 100%;
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }
-</style>
 
+/* Hvis af en eller anden årsag, at scrollbar ikke hides, så justeres farven på scrollbar*/
+.artists {
+    scrollbar-color: var(--guld) transparent;
+}
+</style>
