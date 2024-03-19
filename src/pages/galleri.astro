@@ -117,27 +117,5 @@ import Backbutton from "../components/Backbutton.astro";
 });
 
 </script>
-
-<!-- <script>
- document.addEventListener("DOMContentLoaded", function() {
-  // Gemmer referencer til alle knapper og billeder
-  const buttons = document.querySelectorAll('.button');
-  const galleries = document.querySelectorAll('.column');
-
-  // Tilføjer en event listener til hver knap
-  buttons.forEach(button => {
-    button.addEventListener('click', function() {
-      const year = this.id.substring(3); // Udtrækker året fra knappens id
-      // Skjuler alle gallerier
-      galleries.forEach(gallery => {
-        gallery.classList.remove('show'); // Fjerner klassen 'show' fra alle gallerier
-      });
-      // Viser det galleri der matcher året for den klikkede knap
-      document.getElementById(`gallery${year}`).classList.add('show'); // Tilføjer klassen 'show' til det valgte galleri
-    });
-  });
-});
-
-</script> -->
   
 </MainLayout>
