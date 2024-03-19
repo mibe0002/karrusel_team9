@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.button {
+  padding: 15px 35px;
+  background-color: #f0b921;
+  color: #63313a;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 70px;
+  margin-left: 70px;
+}
+
+#btn2023,
+#btn2022,
+#btn2021,
+#btn2019 {
+  font-size: 1.5rem;
+}
+
+.button:hover {
+  background-color: #6ebba4;
+}
+
+.gallery {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery.active {
+  display: flex;
+}
+
+.gallery img {
+  max-width: 100px;
+  margin: 10px;
+}

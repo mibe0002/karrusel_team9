@@ -4,26 +4,27 @@ import "../styles/style.css";
 
 <footer class="footer">
     <div class="emailformat">
+        <!-- netlify?? kan ikke sættes ind på nedenstående linje? -->
          <form action="#" method="post">
             <input type="email" name="email" placeholder="Email" required>
-            <button type="submit">Submit</button>
+            <button class="button" type="submit">Submit</button>
         </form>
     </div>
     <div class="footernav">
         <a href="/">Home</a>
-        <a href="/faq">Contact</a>
+        <a href="mailto:info@nusnus.dk">Contact</a>
         <a href="/faq">About us</a>
     </div>
     <div class="so_me_icons">
-        <img src="../img/footer/instagramicon.svg" alt="instagram's icon">
-        <img src="../img/footer/facebookicon.svg" alt="facebook's icon">
-        <img src="../img/footer/yticon.svg" alt="youtube's icon">
-        <img src="../img/footer/spotifyicon.svg" alt="spotify's icon">
+        <a href="https://www.instagram.com/karruselfest/"><img src="../img/footer/instagramicon.svg" alt="instagram's icon"></a>
+        <a href="https://www.facebook.com/karruselfest"><img src="../img/footer/facebookicon.svg" alt="facebook's icon"></a>
+        <a href="https://www.youtube.com/@karruselcopenhagen557"><img src="../img/footer/yticon.svg" alt="youtube's icon"></a>
+        <a href="https://open.spotify.com/user/karruselfest?si=86eefaead0a14059"><img src="../img/footer/spotifyicon.svg" alt="spotify's icon"></a>
     </div>
 </footer>
 
 <style>
-    .footer {
+.footer {
     background-color:var(--aubergine);
     padding: 2.5rem 0.4rem;
     display: flex;
@@ -36,33 +37,12 @@ import "../styles/style.css";
     margin: 0 10px;
     text-decoration: none;
     font-size: var(--body-textD3);
+    font-family: var(--primary-font);
+    text-transform: uppercase;
     transition: color 0.3s ease-in-out;
 }
-
-.footer p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.footer .button {
-    background-color: var(--beige);
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.footer .button:hover {
-    background-color: #a64c38;
-}
-
-.circus {
-    text-align: center;
-}
-
-.electronic-music {
-    text-align: center;
+.footernav a:hover {
+    color: var(--guld);
 }
 
 .emailformat {
@@ -73,39 +53,80 @@ import "../styles/style.css";
     padding: 10px;
     border: none;
     border-radius: 5px;
-    margin-bottom: 10px;
+    background-color: var(--beige);
+    caret-color: var(--aubergineD);
 }
 
-.emailformat button {
-    padding: 10px 20px;
-    background-color: #a64c38;
-    border: none;
+.emailformat input[type="email"]::placeholder, textarea::placeholder {
+    color: var(--aubergine);
+    font-size: var(--body-textD1);
+    font-family: var(--secondary-font);
+}
+
+.emailformat input[type="email"]:focus, textarea:focus {
+    outline: 2px solid var(--guld);
+}
+.footer .button {
+    background-color: var(--cyan);
+    color: var(--beige);
+    padding: 8.9px 20px;
     border-radius: 5px;
-    color: #fff;
+    text-decoration: none;
+    border: none;
     cursor: pointer;
+     font-size: var(--body-textD1);
+    font-family: var(--primary-font);
+    text-transform: uppercase;
 }
 
-.footernav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.footer .button:hover {
+    background-color:var(--guld);
 }
-
-.footernav a:hover {
-    color: #a64c38;
-}
-
-.so_me_icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.emailformat button:hover {
+    color: var(--aubergineD);
 }
 
 .so_me_icons img {
     width: 40px;
     height: 40px;
     margin: 0 10px;
+     cursor: pointer;
 }
 
+.so_me_icons img:hover {
+  filter: drop-shadow(0 0 0.75rem var(--guld));
+}
 
+/* MOBILE */
+@media (max-width: 800px) {
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    gap: 52px 65px;
+}
+
+.footernav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.so_me_icons {
+    display:grid;
+  grid-template-columns: 40px 65px;
+  grid-column-gap: 23px;
+  grid-row-gap: 18px;
+}
+}
+
+/* DESKTOP */
+@media (min-width: 801px) {
+    .so_me_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
 </style>
