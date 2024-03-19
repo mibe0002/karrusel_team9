@@ -8,12 +8,12 @@ const {data} = Astro.props;
 <article class="container">
 <div class="card">
     <div class="card_content">
-        <img src={data.img}alt="Billede af kunstner" loading="lazy">
         <h2>{data.artistname}</h2>
-        <p>{data.dato}</p>
-        <p>{data.lokation}</p>
+        <p class="dato">{data.dato}</p>
+        <p class="lokation">{data.lokation}</p>
         <button>Learn more</button>
     </div>
+    <img src={data.img}alt="Billede af kunstnere" loading="lazy">
 </div>
 </article>
 </a>
@@ -25,15 +25,23 @@ const {data} = Astro.props;
     border-radius: 10px;
     background-color: var(--aubergine);
  border-radius: 50%;
- width: 300px;
- height: 300px;
+ width: 366px;
+ height: 366px;
     box-shadow: 0 4px 6px rgba(39, 19, 23, 0.1);
-    padding: 20px;
-    /* flex: 0 0 calc(33.33% - 20px); Adjust width as needed */
+}
+
+.card img {
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
 }
 
 .card_content {
-     position: absolute;
+ position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -42,6 +50,9 @@ const {data} = Astro.props;
     color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 10px;
+    z-index: 1;
 }
 
 .card_content h2 {
@@ -49,33 +60,47 @@ const {data} = Astro.props;
     font-size: var(--h2-textD1);
     color: var(--aubergineD);
     margin-bottom: 10px;
+     position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* forhindrer at teksten selv wrapper */
+  white-space: nowrap;
 }
 
 .card_content p {
     font-size: var(--body-textD1);
     color: var(--aubergineD);
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    position: absolute;
+}
+
+.dato {
+    bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.lokation {
+     bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Hover effect */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(39, 19, 23, 0.1);
-    background-color: var(--cyan);
-}
-
-.card:hover .card-content {
-    opacity: 1;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
 .card:hover img {
     transform: scale(1.1);
 }
+
+.card:hover .card_content {
+    background-color: linear-gradient(to right, rgba(110, 187, 164, 0.1) 50%, transparent 50%);
+    opacity: 1;
+    z-index: 2;
+}
+
  </style>
+
+<!-- 
+ transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(39, 19, 23, 0.1);
+    background-color: var(--cyan); -->
