@@ -2,17 +2,27 @@
 const {data} = Astro.props;
 console.log(data);
 ---
-
+<!-- artists/acid-pauli -->
 <a href={`artists/${data.slug}`}>
 
-<article>
+<article class="container">
+<div class="card">
     <h2>{data.artistname}</h2>
-    <p>at fuga dolor dignissimos deleniti impedit et culpa? Explicabo minima eveniet delectus neque?</p>
-    <button>Læs mere</button>
+    <!-- <img src={img} alt="Acid Pauli"> -->
+    <p>{data.dato}</p>
+    <p>{data.lokation}</p>
+    <p>{data.beskrivelse}</p>
+    <button>Learn more</button>
+</div>
 </article>
 </a>
 
-
-<style></style>
-
-<!-- artists/acid-pauli -->
+<style>
+.card {
+ border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 0 0 calc(33.33% - 20px); /* Adjust width as needed */
+ }
+ 
+ </style>
