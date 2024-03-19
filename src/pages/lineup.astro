@@ -25,7 +25,7 @@ const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_ka
     }
 </section>
 
-<div class="plakat">
+<div id="plakat">
     <img src="/img/lineups23plakat.webp" alt="Poster program over performers">
 </div>
 </MainLayout>
@@ -57,10 +57,19 @@ const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_ka
     scrollbar-color: var(--guld) transparent;
 }
 
-.plakat {
-    padding: 80px 500px;
+#plakat {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    padding: 80px 0;
 }
 
 /* MOBIL */
-
+@media (max-width: 800px) {
+#plakat {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+}
+}
 </style>
