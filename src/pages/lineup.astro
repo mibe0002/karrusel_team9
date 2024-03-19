@@ -19,8 +19,10 @@ const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_ka
     <Titlebanner h1="Artists" />
 
 <section class="artists">
-    {data.map(show=>{
-    return <Card data={show} className="card"/>;
+    {data.map(show=> {
+    return <Card data={show} className="card">
+        
+        </Card>
     })
     }
 </section>
@@ -42,5 +44,5 @@ const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_ka
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }
-
 </style>
+
