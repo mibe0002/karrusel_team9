@@ -27,14 +27,12 @@ console.log(myData);
 
 <!-- dot notation virkede ikke = {myData.artistname} i stedet løst med bracket notation -->
 <MainLayout title={myData['artistname']}>
-<p>{myData['lokation']}</p>
-
 <div class="grid_1-1-1">
         <div class="photo">
             <img src={myData['img']} alt="Kunstner" loading="lazy">
             <div class="navn">
                 <h2>{myData['artistname']}</h2>
-                <a href="/#">FOLLOW THE ARTIST</a>
+                <a href="#">FOLLOW THE ARTIST</a>
             </div>
             <div id="icon_screen">
                 <div id="icon_background">
@@ -46,28 +44,27 @@ console.log(myData);
         </div>
         <div class="tekst order">
             <div class="dato">
-                <p>Saturday 06/24 | 22.05-23.30</p>
+                <p>{myData['dato']}</p>
             </div>
             <div class="location">
                 <h3>Location</h3>
-                <a href="/#">Manegen</a>
+                <a href="/faq">Manegen</a>
             </div>
             <div class="description">
                 <h3>Description</h3>
-                <p>Martin Gretschmann, aka Acid Pauli, is a Berlin-based DJ, who has been exploring the fields of music for the past 20 years. What started out as a computer-based live act has now morphed into a dancefloor-focused hybrid live/DJ performance, yet reserves the freedom to experiment. 
-    With two albums under his belt, Acid Pauli never ceases to amaze with his ability to create amazing sounds for his audience. His music not only incorporates techno and house, but a wide variety of music across genres beyond dance music.</p>
+                <p>{myData['beskrivelse']}</p>
             </div>
             <div class="genre">
                 <h3>Genre</h3>
-                <p>DJ, Techno, House, Dance Music</p>
+                <p>{myData['genre']}</p>
             </div>
         </div>
         <div class="list">
-            <a href="/#" class="seeall">See all</a>
+            <a href="/lineup" class="seeall">See all</a>
             <div class="artists">
                 <div class="artist">
-                <img src="/img/ame-img.jpg" alt="Ame" class="art_img">
-                <a href="/#">Âme</a>
+                <img src="/img/acid-pauli.jpg" alt="Acid Pauli" class="art_img">
+                <a href="#">Acid Pauli</a>
                 </div>
                 <div class="artist">
                 <img src="/img/anna-logic.jpg" alt="Anna Logic" class="art_img">
@@ -102,10 +99,13 @@ width: 100%;
     font-size: var(--h1-textM2);
     color: var(--cyan);
      padding-top: 12px;
+     text-wrap: nowrap;
 }
 
 h2 {
     font-size: var(--h2-textD3);
+    text-wrap: nowrap;
+    padding-right: 10px;
 }
 
 h3 {
@@ -213,6 +213,10 @@ h2 {
   height: 100%;
   background-size: cover;
   background-image: url(../../img/acid_icons.svg);
+}
+
+#icon_sprite:hover {
+    filter: drop-shadow(0 0 0.70rem var(--guld));
 }
 
 .order {
