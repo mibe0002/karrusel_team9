@@ -1,5 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import Backbutton from "../../components/Backbutton.astro";
+import Titlebanner from "../../components/Titlebanner.astro";
 export async function getStaticPaths() {
   const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_karrusel_supabase",
   {
@@ -27,6 +29,8 @@ console.log(myData);
 
 <!-- dot notation virkede ikke = {myData.artistname} i stedet løst med bracket notation -->
 <MainLayout title={myData['artistname']}>
+    <Backbutton />
+    <Titlebanner h1={myData['artistname']} />
 <div class="grid_1-1-1">
         <div class="photo">
             <img src={myData['img']} alt="Kunstner" loading="lazy">
@@ -99,13 +103,11 @@ width: 100%;
     font-size: var(--h1-textM2);
     color: var(--cyan);
      padding-top: 12px;
-     text-wrap: nowrap;
 }
 
 h2 {
     font-size: var(--h2-textD3);
-    text-wrap: nowrap;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 
 h3 {
