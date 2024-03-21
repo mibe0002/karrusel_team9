@@ -67,6 +67,9 @@ img {
   /* buttons samme size her, bare med uppercase - det samme med links = underline*/
   --body-textM1: 0.9rem;
   --body-textM2: 1rem;
+
+  /* til banner line */
+  --line-color: #ffe9c3;
 }
 
 /* fontface */

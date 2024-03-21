@@ -1,21 +1,20 @@
 ---
 import "../styles/style.css";
-import logovector from "../assets/logovector.svg"
 ---
 <header>
 <nav>
   <div class="logo">
- <!-- <a href="/"><img src="../img/header/logovector.svg" alt="Karrusel's logo vector" loading="lazy"></a> -->
- <img src={logovector.src} alt="Karrusel's logo vector">
+    <a href="/"><img src="/img/header/logovector.svg" alt="Karrusel's logo vector"></a>
+ 
   </div>
 
     <ul class="menu">
         <li><a href="/faq">FAQ</a></li> 
         <li> <a href="/galleri">Gallery</a></li>
-        <li><a href="/"><img id="logovector" src="../img/header/logovector.svg" alt="Karrusel's logo vector"><span class="mobile_only">Home</span></a></li>
+        <li><a href="/"><img id="logovector" src="/img/header/logovector.svg" alt="Karrusel's logo vector"><span class="mobile_only">Home</span></a></li>
         <li><a href="/lineup">Line - up</a></li>
         <li><div id="ticket">
-        <img id="ticketbackground" src="../img/header/ticketbackground.svg" alt="svg background for ticket">
+        <img id="ticketbackground" src="/img/header/ticketbackground.svg" alt="svg background for ticket">
         <a href="/tickets">Tickets</a></div></li>
     </ul>
 
@@ -211,7 +210,7 @@ height: auto;
     left: 0;
     width: 100%;
     box-shadow: 0 10px 20px rgba(39, 19, 23, 15);
-    z-index: 1;
+    z-index: 10;
     text-align: right;
     padding-right: 36px;
   }

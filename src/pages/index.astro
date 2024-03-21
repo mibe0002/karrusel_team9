@@ -3,7 +3,7 @@ import "../styles/index.css"
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="Lineups">
+<MainLayout title="Home">
     <div id="screen">
         <div id="index_background"></div>
         <div id="index_elements">
@@ -13,7 +13,7 @@ import MainLayout from "../layouts/MainLayout.astro";
             <div id="timer_container">
                 <div id="timer_sprite"></div>
             </div>
-            <a href="../pages/tickets.astro"><div id="ticket_container">
+            <a href="/tickets" aria-label="Ticket button"><div id="ticket_container">
                 <div id="ticket_sprite"></div>
             </div></a>
             <div id="pointer_container" class="move">
@@ -48,7 +48,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 <h2>ABOUT</h2>
                 <p>Karrusel is a circus themed rave presenting some of the world's leading elec&shy;tronic artists. The festival is open air and takes place on secluded green spot at the aban&shy;doned shipyard of Refshaleøen in central Copenhagen.</p>
             </div>
-            <a href="../pages/faq.astro"><div id="iconbutton_container">
+            <a href="/faq" aria-label="Read more about Karrusel button"><div id="iconbutton_container">
                 <div id="iconbutton_sprite"></div>
             </div></a>
         </div>
@@ -61,16 +61,16 @@ import MainLayout from "../layouts/MainLayout.astro";
         </div>
     </div>
     <div class="container">
-        <div class="box_1"><img src="../../public/img/photo_1.jpg" alt="1"></div>
-        <div class="box_2"><img src="../../public/img/photo_2.jpg" alt="2"></div>
-        <div class="box_3"><img src="../../public/img/photo_5.jpg" alt="3"></div>
-        <div class="box_4"><img src="../../public/img/photo_4.jpg" alt="4"></div>
-        <div class="box_5"><img src="../../public/img/photo_3.jpg" alt="5"></div>
-        <div class="box_6"><img src="../../public/img/photo_6.jpg" alt="6"></div>
+        <div class="box_1"><img src="img/photo_1.jpg" alt="1" loading="lazy"></div>
+        <div class="box_2"><img src="/img/photo_2.jpg" alt="2" loading="lazy"></div>
+        <div class="box_3"><img src="/img/photo_5.jpg" alt="3" loading="lazy"></div>
+        <div class="box_4"><img src="/img/photo_4.jpg" alt="4" loading="lazy"></div>
+        <div class="box_5"><img src="/img/photo_3.jpg" alt="5" loading="lazy"></div>
+        <div class="box_6"><img src="/img/photo_6.jpg" alt="6" loading="lazy"></div>
     </div>
      <div id="seemore_screen">
         <div id="seemore_background">
-            <a href="../pages/galleri.astro"><div id="seemore_container">
+            <a href="/galleri" aria-label="Gallery button"><div id="seemore_container">
                 <div id="seemore_sprite"></div></a>
             </div>
         </div>

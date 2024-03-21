@@ -2,31 +2,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 200px;
+  padding: 20px;
+  background-color: #63313a;
+  border-radius: 20px;
+  margin: 0 40px;
 }
 
 header {
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 }
 
 main {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  background-color: #63313a;
-  border-radius: 40px;
+  padding-top: 0%;
+}
+
+#back_button {
+  background: none;
+  border: none;
+  padding: 0px 22px;
+  cursor: pointer;
+  width: 9%;
+  min-width: 147px;
+  height: auto;
 }
 
 .ticket {
-  width: 800px;
-  height: 800px;
-}
-
-#ticket1 {
-  margin-right: -130px;
-}
-
-#ticket2 {
-  margin-left: -130px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
 }
 
 .ticket:hover {
@@ -39,4 +42,46 @@ main {
 
 #ticket2:hover {
   content: url("../../tickets/ticket2_hover.svg");
+}
+
+@media only screen and (min-width: 768px) {
+  .tickets {
+    padding: 100px;
+  }
+
+  main {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-radius: 40px;
+  }
+
+  .ticket {
+    width: 800px;
+    height: 800px;
+  }
+
+  #ticket1 {
+    margin-right: -130px;
+  }
+
+  #ticket2 {
+    margin-left: -130px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ticket-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tickets {
+    gap: 15px;
+  }
+
+  .ticket {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
 }

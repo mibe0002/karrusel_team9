@@ -1,42 +1,14 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import Backbutton from "../../components/Backbutton.astro";
-import Titlebanner from "../../components/Titlebanner.astro";
-export async function getStaticPaths() {
-  const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_karrusel_supabase",
-  {
-    method:"GET",
-    headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6ZmpibGV4aHdvaWpnYmdtaXh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAzNDIxMTQsImV4cCI6MjAyNTkxODExNH0.O7nP4UolRZVDGhGQ3-0RoYhP0SEzLOyHHhp125SwNvw"
-    },
-    }
-).then((response) => response.json());
-
-  return data.map((artist) => {
-    return {
-      params: { slug: artist.slug },
-      props: { myData: artist },
-    };
-  });
-}
-
-const { slug } = Astro.params;
-const { artist } = Astro.props;
-
-const { myData } = Astro.props;
-console.log(myData);
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<!-- dot notation virkede ikke = {myData.artistname} i stedet løst med bracket notation -->
-<MainLayout title={myData['artistname']}>
-    <Backbutton />
-    <Titlebanner h1={myData['artistname']} />
-<div class="grid_1-1-1">
+<MainLayout title="Acid Pauli">
+    <div class="grid_1-1-1">
         <div class="photo">
-            <img src={myData['img']} alt="Kunstner" loading="lazy">
+            <img src="/img/acid-pauli.jpg" alt="Acid Pauli">
             <div class="navn">
-                <h2>{myData['artistname']}</h2>
-                <a href="#">FOLLOW THE ARTIST</a>
+                <h2>Acid Pauli</h2>
+                <a href="/#">FOLLOW THE ARTIST</a>
             </div>
             <div id="icon_screen">
                 <div id="icon_background">
@@ -48,27 +20,28 @@ console.log(myData);
         </div>
         <div class="tekst order">
             <div class="dato">
-                <p>{myData['dato']}</p>
+                <p>Saturday 06/24 | 22.05-23.30</p>
             </div>
             <div class="location">
                 <h3>Location</h3>
-                <a href="/faq">Manegen</a>
+                <a href="/#">Manegen</a>
             </div>
             <div class="description">
                 <h3>Description</h3>
-                <p>{myData['beskrivelse']}</p>
+                <p>Martin Gretschmann, aka Acid Pauli, is a Berlin-based DJ, who has been exploring the fields of music for the past 20 years. What started out as a computer-based live act has now morphed into a dancefloor-focused hybrid live/DJ performance, yet reserves the freedom to experiment. 
+    With two albums under his belt, Acid Pauli never ceases to amaze with his ability to create amazing sounds for his audience. His music not only incorporates techno and house, but a wide variety of music across genres beyond dance music.</p>
             </div>
             <div class="genre">
                 <h3>Genre</h3>
-                <p>{myData['genre']}</p>
+                <p>DJ, Techno, House, Dance Music</p>
             </div>
         </div>
         <div class="list">
-            <a href="/lineup" class="seeall">See all</a>
+            <a href="/#" class="seeall">See all</a>
             <div class="artists">
                 <div class="artist">
-                <img src="/img/acid-pauli.jpg" alt="Acid Pauli" class="art_img">
-                <a href="#">Acid Pauli</a>
+                <img src="/img/ame-img.jpg" alt="Ame" class="art_img">
+                <a href="/#">Âme</a>
                 </div>
                 <div class="artist">
                 <img src="/img/anna-logic.jpg" alt="Anna Logic" class="art_img">
@@ -107,7 +80,6 @@ width: 100%;
 
 h2 {
     font-size: var(--h2-textD3);
-    padding-right: 30px;
 }
 
 h3 {
@@ -217,10 +189,6 @@ h2 {
   background-image: url(../../img/acid_icons.svg);
 }
 
-#icon_sprite:hover {
-    filter: drop-shadow(0 0 0.70rem var(--guld));
-}
-
 .order {
     order: -1;
   }
@@ -260,4 +228,3 @@ h2 {
 }
 }
 </style>
-

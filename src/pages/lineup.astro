@@ -1,146 +1,92 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Card from "../components/Card.astro"
+import Card from "../components/Card.astro";
 import Backbutton from "../components/Backbutton.astro";
-const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_karrusel_supabase", {
-    method:"GET",
+import Titlebanner from "../components/Titlebanner.astro";
+const data = await fetch("https://jzfjblexhwoijgbgmixy.supabase.co/rest/v1/t8_karrusel_supabase",
+{
+    method: "GET",
     headers: {
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6ZmpibGV4aHdvaWpnYmdtaXh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAzNDIxMTQsImV4cCI6MjAyNTkxODExNH0.O7nP4UolRZVDGhGQ3-0RoYhP0SEzLOyHHhp125SwNvw"
-    }
-}).then(res=>res.json());
+    },
+}).then((res) => res.json());
 
 // console.log(data);
 ---
 
 <MainLayout title="Line-ups">
     <Backbutton />
-      <h1>ARTISTS</h1>
+    <Titlebanner h1="Artists" />
+
 <section class="artists">
-    {data.map(show=>{
-    return <Card data={show}/>;
+    {data.map((show) => {
+    return <Card data={show} className="card" />;
     })
     }
-
 </section>
-    
-      
 
-        <!-- <div class="carousel_flip_container">
-            <div class="carousel_inner">
-                <div class="card active">
-                    <div class="card_front">
-                        <img src="img/activities_img/detektivskema.webp"
-                            alt="Stemnings billede til detektivskema aktiviteten">
+<div id="scrollindicator"></div>
 
-                        <h2>DETECTIVE SHEET</h2>
-                    </div>
-                    <div class="card_back">
-                        <p>"The Detective Sheet" is an educational resource designed for teaching about the
-                            context
-                            of
-                            plants,
-                            focusing on "foraging
-                            sites" and "foraging landscapes."</p>
-
-                        <p>
-                            Before you begin: <br>
-                            ᨒ Make sure to have your teacher print out the PDF or download it to your mobile
-                            device.
-                            <br>
-                            ᨒ Remember to bring a pencil and eraser if you're working on paper. <br>
-                            ᨒ Keep the website, handy for reference, while completing the task. <br>
-                            ᨒ Your teacher will allocate a specific amount of time for you to complete the
-                            assignment.
-                            <br>
-                            ᨒ Always remember to ask your teachers for guidance before foraging anything or if
-                            you're
-                            unsure
-                            about
-                            anything.
-                        </p>
-
-                        <p><a href="img/activities_img/9_Elev_Undervisningsforlob_-_Detektivskema.pdf" target="blank"
-                                class="pdf">DOWNLOAD
-                                PDF</a></p>
-
-                        <img id="butterfly" src="img/activities_img/butterfly.svg" alt="butterfly illustration">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card_front">
-                        <img src="img/activities_img/draw.webp" alt="Stemnings billede til draw the ingredient">
-
-                        <h2>DRAW THE INGREDIENT</h2>
-                    </div>
-                    <div class="card_back">
-                        <p>"Draw the Ingredient" is an educational resource designed to teach about the unique
-                            characteristics of ingredients and
-                            plant identification. It's a simple drawing exercise intended to encourage students to pay
-                            extra attention to specific
-                            aspects of the ingredient. </p>
-
-
-                        <p>
-                            Before you begin: <br>
-                            ᨒ Make sure to have your teacher print out the PDF or download it to your mobile
-                            device.
-                            <br>
-                            ᨒ Remember to bring a pencil and eraser if you're working on paper. <br>
-                            ᨒ Keep the website, handy for reference, while completing the task. <br>
-                            ᨒ Your teacher will allocate a specific amount of time for you to complete the
-                            assignment.
-                            <br>
-                            ᨒ Always remember to ask your teachers for guidance before foraging anything or if
-                            you're unsure about anything.
-                        </p>
-
-                        <p><a href="img/activities_img/10_Elev_Undervisningsforlob_-_Tegn_Urten.pdf" target="blank"
-                                class="pdf">DOWNLOAD
-                                PDF</a></p>
-
-                        <img id="flower" src="img/activities_img/flower.webp" alt="flower illustration">
-                    </div>
-                </div>
-
-
-                <div class="card">
-                    <div class="card_front">
-                        <img src="img/activities_img/cook.webp" alt="Stemnings billede til cook the ingredient">
-
-                        <h2>COOK THE INGREDIENT</h2>
-                    </div>
-                    <div class="card_back">
-                        <p>"Cook the Ingredient" is an educational resource aimed at enhancing students' understanding
-                            of cooking ingredients and
-                            culinary techniques. This activity encourages students to explore the unique characteristics
-                            of ingredients and their
-                            role in cooking.</p>
-
-
-                        <p>
-                            Before you begin: <br>
-                            ᨒ Remember to wash hands thoroughly.
-                            <br>
-                            ᨒ Always follow safety precautions when cooking.
-                            <br>
-                            ᨒ Read and understand the recipe carefully before you begin. Pay attention to ingredients,
-                            measurements, and cooking
-                            techniques. <br>
-                            ᨒ Make sure you know how to use the right equipment. <br>
-                            ᨒ Don't hesitate to ask your teachers for guidance if you're unsure about anything.
-                        </p>
-
-                        <p><a href="img/activities_img/10_Elev_Undervisningsforlob_-_Tegn_Urten.pdf" target="blank"
-                                class="pdf">DOWNLOAD
-                                PDF</a></p>
-
-                        <img id="cook" src="img/activities_img/cookhat.svg" alt="cooking hat illustration">
-                    </div>
-                </div>
-            </div>
-            <button class="btn prev">❮</button>
-            <button class="btn next">❯</button>
-            <div class="dots"></div>
-        </div>    -->
+<div id="plakat">
+    <img src="/img/lineups23plakat.webp" alt="Poster program over performers">
+</div>
 </MainLayout>
+
+<style>
+.artists {
+        display: flex;
+        overflow: auto;
+        /* etablerer scrolling effect, der skal rulle via. x-aksen */
+        scroll-snap-type: x mandatory;
+        padding: 10px;
+        gap: 20px;
+        /* sørger for at der er padding mellem elementer når der scrolles */
+        scroll-padding: 10px;
+         /* gemmer de forskellige browerseres standard scrollbar */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+.artists::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+    }
+.artists .card {
+    /* cards viser sig 100% og ikke forstrækkes */
+        flex: 0 0 100%;
+        /* sørger at de ruller jævnt */
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+/* Hvis af en eller anden årsag, at scrollbar ikke gemmes, så justeres farven på scrollbar til temaet*/
+.artists {
+    scrollbar-color: var(--guld) transparent;
+    }
+#scrollindicator {
+     position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px; /* Juster højden efter behov */
+    background-color: red; /* Farven på indikatorbjælken */
+    z-index: 9999; /* Sørg for, at indikatorbjælken er foran alt andet indhold */
+    transition: transform 0.3s ease; /* Tilføj en overgangseffekt for at gøre det mere jævnt */
+
+}
+body.scrolled #scrollindicator {
+    width: 100%; /* Fyld hele bredden, når brugeren når bunden */
+}
+#plakat {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    padding: 80px 0;
+    }
+
+/* MOBIL */
+@media (max-width: 800px) {
+#plakat {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+}
+}
+</style>

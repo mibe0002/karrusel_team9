@@ -1,18 +1,109 @@
 ---
-const {data} = Astro.props;
-console.log(data);
+const { data } = Astro.props;
+// console.log(data);
 ---
-
-<a href={`artists/${data.slug}`}>
-
-<article>
-    <h2>{data.artistname}</h2>
-    <p>at fuga dolor dignissimos deleniti impedit et culpa? Explicabo minima eveniet delectus neque?</p>
-    <button>Læs mere</button>
+<!-- artists/acid-pauli -->
+<!-- husk /foran artists da det skal komme fra artists(root) map ellers siger den bare lineup/kunstner -->
+<a href={`/artists/${data.slug}`}>
+<article class="container">
+<div class="card">
+    <div class="card_content">
+        <h2>{data.artistname}</h2>
+        <p class="dato">{data.dato}</p>
+        <p class="lokation">{data.lokation}</p>
+    </div>
+    <img src={data.img} alt="Billede af kunstnere" loading="lazy">
+</div>
 </article>
 </a>
 
+<style>
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--aubergine);
+ border-radius: 50%;
+ width: 366px;
+ height: 366px;
+    box-shadow: 0 4px 6px rgba(39, 19, 23, 0.1);
+}
 
-<style></style>
+.card img {
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+}
 
-<!-- artists/acid-pauli -->
+.card_content {
+ position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(110, 187, 164, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.card_content h2 {
+    font-family: var(--secondary-font);
+    font-size: var(--h2-textD1);
+    color: var(--aubergineD);
+    margin-bottom: 10px;
+     position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* forhindrer at teksten selv wrapper */
+  white-space: nowrap;
+  text-shadow: var(--aubergineD) 1px 0 10px;
+}
+
+.card_content p {
+    font-size: var(--body-textD1);
+    color: var(--aubergineD);
+    margin-bottom: 10px;
+    position: absolute;
+     text-shadow: var(--aubergineD) 1px 0 10px;
+}
+
+.dato {
+    bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.lokation {
+     bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hover effect */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card:hover .card_content {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* MOBIL */
+@media (max-width: 800px) {
+    .card:focus .card_content {
+    opacity: 1;
+    z-index: 2;
+}
+.card {
+    margin-left: 5px;
+}
+}
+ </style>
